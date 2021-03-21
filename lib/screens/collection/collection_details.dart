@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:workshopcodeconflutter/models/car.dart';
 import 'package:workshopcodeconflutter/models/hw_collection.dart';
@@ -50,6 +51,17 @@ class _CollectionDetailsState extends State<CollectionDetails> {
                   // TODO: Handle this case.
                   break;
                 case ConnectionState.done:
+                  if (snapshot.hasError) {
+                    DioError error = snapshot.error;
+                    print(error.error);
+                    return Column(children: [
+                      Expanded(
+                        child: Center(
+                          child: Text("Oops, algo de errado aconteceu."),
+                        ),
+                      ),
+                    ]);
+                  }
                   List<Car> cars = snapshot.data;
 
                   return PageView(
