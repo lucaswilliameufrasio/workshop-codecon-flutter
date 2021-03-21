@@ -12,7 +12,8 @@
 <h2 id="requirements">🖥 Requisitos </h2>
 
 - Git
-- Flutter SDK - 1.17 ou mais recente
+- Flutter SDK - 2.0.3
+- Dart - 2.12.2
 - Android SDK
 - Emulador Android ou Simulador iOS
 
